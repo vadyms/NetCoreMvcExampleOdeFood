@@ -8,6 +8,7 @@
     <environment include="Development">
         @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />*@
         <link rel="stylesheet" href="~/lib/bootstrap-3.3.7-dist/css/bootstrap.css" />
+        @*<link rel="stylesheet" href="~/css/site.css" />*@
     </environment>
     <environment exclude="Development">
         @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -57,11 +58,14 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - OdeToFood - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+<footer class="border-top footer text-muted">
+    <vc:restaurant-count></vc:restaurant-count>
+    @RenderSection("footer", required: false)
+    <div class="container">
+        &copy; 2019 - OdeToFood - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    </div>
+    <img src="~/OdeToFood.png" alt="OdeToFood Image"/>
+</footer>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

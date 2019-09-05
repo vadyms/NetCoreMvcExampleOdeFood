@@ -2,7 +2,6 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using OdeToFood.Core;
-using Remotion.Linq.Clauses;
 
 namespace OdeToFood.Data
 {
@@ -50,6 +49,11 @@ namespace OdeToFood.Data
             }
 
             return restaurant;
+        }
+
+        public int GetCountOfRestaurants()
+        {
+            return _db.Restaurants.Count();
         }
 
         public int Commit()
